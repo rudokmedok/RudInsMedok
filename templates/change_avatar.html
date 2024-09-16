@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Change Avatar{% endblock %}
+
+{% block content %}
+<h1>Change Avatar</h1>
+<form method="POST" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+    {{ form.avatar.label }} {{ form.avatar() }}
+    {{ form.submit() }}
+</form>
+{% endblock %}
