@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RudIns - посты и новости</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+{% block title %}{% endblock %}
+{% extends "base.html" %}
+{% block content %}
+    <div class="container">
+        <h2>Посты:</h2>
+        {% for post in posts %}
+    <div class="post">
+        <div class="post-header">
+            <h2>{{ post.title }}</h2>
+        </div>
+        <div class="post-media">
+            {% for media in post.media %}
+                {% if media.file_type == 'image' %}
+                    <img src="{{ url_for('static', filename='media/' + media.file_name) }}" alt="Post Image">
+                {% elif media.file_type == 'video' %}
+                    <video controls>
+                        <source src="{{ url_for('static', filename='media/' + media.file_name) }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                {% endif %}
+            {% endfor %}
+        </div>
+                <p>{{ post.content }}</p>
+                <p><strong>Tags:</strong> {{ post.tags }}</p>
+                <p><strong>Author:</strong> {{ post.author.nickname }}</p>
+                <p>+rep: {{ post.likes }} | -rep: {{ post.views }}</p>
+                <a href="/like/{{ post.id }}">отдать уважение</a> | <a href="/view/{{ post.id }}">забрать уважение</a>
+                {% if post.author == current_user %}
+            <a href="{{ url_for('edit_post', post_id=post.id) }}">Edit</a>
+            <form action="{{ url_for('delete_post', post_id=post.id) }}" method="POST" style="display:inline;">
+                <button type="submit">Delete</button>
+
+            </form>
+        <button class="share-btn" onclick="copyLink('{{ url_for('show_post', post_id=post.id, _external=True) }}')">Share</button>
+
+            {% endif %}
+            </div>
+        {% endfor %}
+
+    </div>
+
+<script>
+function copyLink(link) {
+    navigator.clipboard.writeText(link).then(function() {
+        alert('Link copied to clipboard: ' + link);
+    }, function(err) {
+        console.error('Could not copy text: ', err);
+    });
+}
+</script>
+
+{% endblock %}
+</body>
+</html>
