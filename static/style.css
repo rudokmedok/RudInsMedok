@@ -1,0 +1,236 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #f9f9f9, #e1e1e1);
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.post {
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.post-header {
+    background: #4CAF50;
+    color: white;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+}
+
+.post h2 {
+    margin: 0;
+}
+
+.post-media img, .post-media video {
+    width: 100%;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+.post-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.share-btn {
+    background: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.share-btn:hover {
+    background: #45a049;
+}
+
+/* Search form styling */
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-form input[type="text"] {
+    padding: 5px 100px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 50px;
+}
+
+.search-form .btn {
+    background: #4CAF50;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-form .btn:hover {
+    background: #45a049;
+}
+
+
+.navbar {
+    background: #4CAF50;
+    padding: 15px;
+    border-radius: 5px;
+    color: white;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+input, textarea {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: calc(100% - 22px);
+}
+
+button {
+    background: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #45a049;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+input, textarea {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: calc(100% - 22px);
+}
+
+form {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background: #fff;
+}
+
+/* Avatar styling */
+.avatar {
+    border-radius: 50%;
+    border: 2px solid #4CAF50;
+    width: 50px;
+    height: 50px;
+}
+
+/* Navbar styling */
+.navbar {
+    background: #4CAF50;
+    padding: 15px;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.navbar .profile-info {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .profile-info span {
+    margin-left: 10px;
+}
+
+/* Button styling */
+button, .btn {
+    background: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+button:hover, .btn:hover {
+    background: #45a049;
+}
+
+/* Add post button */
+.add-post-btn {
+    background: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-post-btn:hover {
+    background: #45a049;
+}
+
+.add-post-btn:hover {
+    background: #45a049;
+}
+
+/* Profile edit menu */
+.profile-edit-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    margin-top: 20px;
+}
+
+.profile-edit-menu h2 {
+    margin-bottom: 20px;
+}
+
+.profile-edit-menu .btn {
+    width: 100%;
+    text-align: left;
+}
+
