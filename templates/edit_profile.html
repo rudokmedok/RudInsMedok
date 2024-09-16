@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Profile{% endblock %}
+
+{% block content %}
+<h1>Edit Profile</h1>
+<div class="profile-edit-menu">
+    <h2>Profile Settings</h2>
+    <p>Registration Date: {{ current_user.registration_date.strftime('%d/%m/%Y') }}</p>
+    <button class="btn" onclick="location.href='{{ url_for('change_nickname') }}'">Change Nickname</button>
+    <button class="btn" onclick="location.href='{{ url_for('change_password') }}'">Change Password</button>
+    <button class="btn" onclick="location.href='{{ url_for('change_avatar') }}'">Change Avatar</button>
+</div>
+{% endblock %}
