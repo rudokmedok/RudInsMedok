@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+<div class="post">
+    <div class="post-header">
+        <h2>{{ post.title }}</h2>
+    </div>
+    <div class="post-media">
+        {% for media in post.media %}
+            {% if media.file_type == 'image' %}
+                <img src="{{ url_for('static', filename='media/' + media.file_name) }}" alt="Post Image">
+            {% elif media.file_type == 'video' %}
+                <video controls>
+                    <source src="{{ url_for('static', filename='media/' + media.file_name) }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <p>{{ post.content }}</p>
+    <p>Tags: {{ post.tags }}</p>
+    <p>Author: {{ post.author.nickname }}</p>
+    <p>Likes: {{ post.likes }} | Views: {{ post.views }}</p>
+</div>
+{% endblock %}
