@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Change Nickname{% endblock %}
+
+{% block content %}
+<h1>Change Nickname</h1>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.nickname.label }} {{ form.nickname(size=32) }}
+    {{ form.submit() }}
+</form>
+{% endblock %}
